@@ -21,10 +21,12 @@ class App {
         var light1L: HemisphericLight = new HemisphericLight("light1", new Vector3(1, 1, 0), scene);
         var sphere: Mesh = MeshBuilder.CreateSphere("sphere", { diameter: 1 }, scene);
 
+        scene.debugLayer.show(); //shows debug tools by default
+
         //hide/show the Inspector
-        window.addEventListener("keydown", (ev) => {
-            //shift+ctrl+alt+I
-            if (ev.shiftKey && ev.ctrlKey && ev.altKey && ev.key === "I") {
+        window.addEventListener("keydown", (e) => {
+            //ctrl
+            if (e.ctrlKey) {
                 if (scene.debugLayer.isVisible()) {
                     scene.debugLayer.hide();
                 } else {

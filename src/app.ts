@@ -44,9 +44,11 @@ class App {
 
         scene.debugLayer.show();
 
+        scene.debugLayer.show(); //shows debug tools by default
+
         //hide/show the Inspector
         window.addEventListener("keydown", (e) => {
-            //shift+ctrl+alt+I
+            //ctrl
             if (e.ctrlKey) {
                 if (scene.debugLayer.isVisible()) {
                     scene.debugLayer.hide();
